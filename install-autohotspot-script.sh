@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Version 1.0.3
+# Version 1.0.4
 
 # This script installs the configure-autohotspot.sh script and creates the 
 # autohotspot.desktop file

@@ -11,7 +11,7 @@
 # Script and instructions are from  http://www.raspberryconnect.com/network/item/330-raspberry-pi-auto-wifi-hotspot-switch-internet
 #
 
-VERSION="1.0.4"
+VERSION="1.0.5"
 
 CONFIG_FILE="$HOME/autohotspot.conf"
 TITLE="Manage Auto-HotSpot version $VERSION"
@@ -132,7 +132,7 @@ then
 else
    MESSAGE="This Pi has single band WiFi (2.4 GHz only)."
 fi
-MESSAGE+="\n\nThe 'Check WiFi' setting below will create a cron job that will execute every 2,5,10 or 15 minutes\nto see if a configured WiFi network is in range.  If it is, it will deactivate Auto-HotSpot.\nSelecting 'No' will disable the cron job.\n\nDo not use single or double quotes in the SSID and Password."
+MESSAGE+="\n\nThe 'Check WiFi' setting below will create a cron job that will execute every 2,5,10 or 15 minutes\nto see if a configured WiFi network is in range.  If it is, it will deactivate Auto-HotSpot.\nSelecting 'No' will disable the cron job.\n\nDo not use single or double quotes in the SSID or Password."
 
 [[ $CHANNELs =~ ${F[_CHANNEL_]} ]] && CHANNELs="$(echo "$CHANNELs" | sed "s/${F[_CHANNEL_]}/\^${F[_CHANNEL_]}/")" 
 

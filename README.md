@@ -13,7 +13,7 @@ Auto-HotSpot is a feature that allows the Raspberry Pi to become a "HotSpot" (Wi
          cd Downloads
          mv autohotspot-master.zip ~
          cd ~
-         unzip autohotspot-master.zip
+         unzip -o autohotspot-master.zip
          cd autohotspot-master
          chmod +x install-autohotspot-scripts.sh
          ./install-autohotspot-scripts.sh
