@@ -1,6 +1,6 @@
 # Scripts to install, remove and manage an Auto-HotSpot on a Raspberry Pi
 
-Version 20190801
+Version 20190802
 
 Auto-HotSpot is a feature that allows the Raspberry Pi to become a "HotSpot" (WiFi access point).  This allows other computers, phones, and tablets to connect to and operate the Pi (using [VNC](https://www.raspberrypi.org/documentation/remote-access/vnc/)) over WiFi.  This Auto-HotSpot uses the [script written by roboberry](http://www.raspberryconnect.com/network/item/330-raspberry-pi-auto-wifi-hotspot-switch-internet) for use on Raspbian Stretch or Buster.
 
@@ -33,7 +33,7 @@ Auto-HotSpot is a feature that allows the Raspberry Pi to become a "HotSpot" (Wi
 
 1.  When Auto-HotSpot is enabled, the Pi will create a HotSpot if an already configured WiFi network (as defined in `/etc/wpa_supplicant/wpa_supplicant.conf`) is __not__ within range.
 
-1. The Pi will create a HotSpot if it's ethernet port is connected.  If that ethernet connection provides Internet access, users connected to the HotSpot can share that Internet connection.  
+1. The Pi will create a HotSpot if it's ethernet port is connected and no configured WiFi network is within range.  If that ethernet connection provides Internet access, users connected to the HotSpot can share that Internet connection.  
 
 1. Internet access is not required for Auto-HotSpot to work.
 
