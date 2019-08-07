@@ -1,6 +1,6 @@
 # Scripts to install, remove and manage an Auto-HotSpot on a Raspberry Pi
 
-Version 20190802
+Version 20190807
 
 Auto-HotSpot is a feature that allows the Raspberry Pi to become a "HotSpot" (WiFi access point).  This allows other computers, phones, and tablets to connect to and operate the Pi (using [VNC](https://www.raspberrypi.org/documentation/remote-access/vnc/)) over WiFi.  This Auto-HotSpot uses the [script written by roboberry](http://www.raspberryconnect.com/network/item/330-raspberry-pi-auto-wifi-hotspot-switch-internet) for use on Raspbian Stretch or Buster.
 
@@ -22,7 +22,7 @@ Auto-HotSpot is a feature that allows the Raspberry Pi to become a "HotSpot" (Wi
          cd ~
          unzip -o autohotspot-master.zip
          cd autohotspot-master
-         chmod +x install-autohotspot-scripts.sh
+         chmod +x install-autohotspot-script.sh
          ./install-autohotspot-scripts.sh
 
 1. Close the Terminal by clicking __File > Close Window__ or typing `exit` and press __Enter__ in the Terminal window.
