@@ -11,7 +11,7 @@
 # Script and instructions are from  http://www.raspberryconnect.com/network/item/330-raspberry-pi-auto-wifi-hotspot-switch-internet
 #
 
-VERSION="1.0.6"
+VERSION="1.0.9"
 
 CONFIG_FILE="$HOME/autohotspot.conf"
 TITLE="Manage Auto-HotSpot version $VERSION"
@@ -192,12 +192,14 @@ then
       then
          sudo apt-get install -y $D || errorReport "Unable to install $D"
       fi
+		[[ $D == "hostapd" ]] && sudo systemctl unmask hostapd && sudo systemctl enable hostapd
       if systemctl list-unit-files | grep enabled | grep -q $D
       then 
       	sleep 5 
          sudo systemctl disable $D
       fi
    done
+	#sudo systemctl unmask hostapd
    echo "Done."
 fi
 
