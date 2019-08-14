@@ -11,7 +11,7 @@
 # Script and instructions are from  http://www.raspberryconnect.com/network/item/330-raspberry-pi-auto-wifi-hotspot-switch-internet
 #
 
-VERSION="1.0.9"
+VERSION="1.0.10"
 
 CONFIG_FILE="$HOME/autohotspot.conf"
 TITLE="Manage Auto-HotSpot version $VERSION"
@@ -150,7 +150,7 @@ $MESSAGE</b>\n" \
    --align=right \
    --borders=20 \
    --form \
-   --field="ESSID (Network Name)" "${F[_SSID_]}" \
+   --field="SSID (Network Name)" "${F[_SSID_]}" \
    --field="Hotspot Password (at least 8 characters)" "${F[_PASSPHRASE_]}" \
    --field="Channel":CB "$CHANNELs" \
 	--field="Check WiFi":CB "$INTERVALs" \
