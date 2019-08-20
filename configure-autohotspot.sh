@@ -11,7 +11,7 @@
 # Script and instructions are from  http://www.raspberryconnect.com/network/item/330-raspberry-pi-auto-wifi-hotspot-switch-internet
 #
 
-VERSION="1.0.10"
+VERSION="1.5"
 
 CONFIG_FILE="$HOME/autohotspot.conf"
 TITLE="Manage Auto-HotSpot version $VERSION"
@@ -327,7 +327,7 @@ EOF
 fi
 rm "$TFILE"
 
-if [[ ${F[_INTERVAL]} == "None" ]]
+if [[ ${F[_INTERVAL]} == "No" ]]
 then # Remove cronjob if present
    crontab -u $USER -l | grep -v "$CRON_HS_COMMAND" | crontab -u $USER -
 else

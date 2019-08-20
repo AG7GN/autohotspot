@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Version 1.0.4
+VERSION="1.5"
 
 # This script installs the configure-autohotspot.sh script and creates the 
 # autohotspot.desktop file
@@ -18,7 +18,7 @@ Type=Application
 Categories=Settings;DesktopSettings;GTK;X-LXDE-Settings;
 Comment[en_US]=Manage Auto-HotSpot
 EOF
-yad --title="Install Auto-HotSpot Files" --text "<b><big><big>Auto-HotSpot files are installed.\n\nClick Raspberry > Preferences > Manage Auto-HotSpot to configure.</big></big></b>" \
+yad --title="Install Auto-HotSpot Files version $VERSION" --text "<b><big><big>Auto-HotSpot files are installed.\n\nClick Raspberry > Preferences > Manage Auto-HotSpot to configure.</big></big></b>" \
   --width=600 --no-wrap --center --buttons-layout=center \
   --text-align=center --borders=20 --button=OK:0
 exit 0
