@@ -1,11 +1,11 @@
 #!/bin/bash
 
-VERSION="1.8"
+VERSION="1.9"
 
 # This script installs the configure-autohotspot.sh script and creates the 
 # autohotspot.desktop file
 
-cp $HOME/autohotspot/configure-autohotspot.sh $HOME/
+sudo cp $HOME/autohotspot/configure-autohotspot.sh /usr/local/bin/
 cat > $HOME/.local/share/applications/autohotspot.desktop <<EOF
 [Desktop Entry]
 Name=Manage Auto-HotSpot
