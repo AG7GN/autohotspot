@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="1.7"
+VERSION="1.8"
 
 # This script installs the configure-autohotspot.sh script and creates the 
 # autohotspot.desktop file
@@ -11,7 +11,7 @@ cat > $HOME/.local/share/applications/autohotspot.desktop <<EOF
 Name=Manage Auto-HotSpot
 GenericName=Manage Auto-HotSpot
 Comment=Install, configure or remove Auto-HotSpot
-Exec=lxterminal --geometry=90x30 -t "Configure Auto-HotSpot" -e "$HOME/configure-autohotspot.sh"
+Exec=lxterminal --geometry=90x30 -t "Configure Auto-HotSpot" -e "/usr/local/bin/configure-autohotspot.sh"
 Icon=/usr/share/icons/HighContrast/32x32/devices/network-wireless.png
 Terminal=false
 Type=Application
