@@ -11,7 +11,7 @@
 # Script and instructions are from  http://www.raspberryconnect.com/network/item/330-raspberry-pi-auto-wifi-hotspot-switch-internet
 #
 
-VERSION="1.12"
+VERSION="1.13"
 
 CONFIG_FILE="$HOME/autohotspot.conf"
 TITLE="Manage Auto-HotSpot version $VERSION"
@@ -62,7 +62,7 @@ fi
 
 if [[ $STATUS =~ Enabled ]]
 then
-   yad --title="$TITLE" --text "<b><big><big>Auto-HotSpot Status: <span color='blue'>$STATUS</span>\n</big></big></b>" \
+   yad --center --title="$TITLE" --text "<b><big><big>Auto-HotSpot Status: <span color='blue'>$STATUS</span>\n</big></big></b>" \
    --borders=20 \
    --buttons-layout=center \
    --text-align=center \
@@ -84,7 +84,7 @@ then
          # Remove cronjob if present
          crontab -u $USER -l | grep -v "$CRON_HS_COMMAND" | crontab -u $USER -
          #rm -f "$CONFIG_FILE"
-         yad --title="$TITLE" --text "<b><big><big>Auto-HotSpot has been disabled.  Reboot required.</big></big></b>" \
+         yad --center --title="$TITLE" --text "<b><big><big>Auto-HotSpot has been disabled.  Reboot required.</big></big></b>" \
          --question --no-wrap \
          --borders=20 \
          --buttons-layout=center \
@@ -340,7 +340,7 @@ else
    echo "Done."
 fi
 
-yad --title="$TITLE" --text "<b><big><big>Auto-HotSpot is ready.  You should reboot now.</big></big></b>" \
+yad --center --title="$TITLE" --text "<b><big><big>Auto-HotSpot is ready.  You should reboot now.</big></big></b>" \
   --question --no-wrap \
   --borders=20 \
   --buttons-layout=center \
