@@ -1,15 +1,24 @@
 # Scripts to install, remove and manage an Auto-HotSpot on a Raspberry Pi
 
-Version 20190908
+Version 20190923
 
 Auto-HotSpot is a feature that allows the Raspberry Pi to become a "HotSpot" (WiFi access point).  This allows other computers, phones, and tablets to connect to and operate the Pi (using [VNC](https://www.raspberrypi.org/documentation/remote-access/vnc/)) over WiFi.  This Auto-HotSpot uses the [script written by roboberry](http://www.raspberryconnect.com/network/item/330-raspberry-pi-auto-wifi-hotspot-switch-internet) for use on Raspbian Stretch or Buster.
 
 ## Prerequisites
 
-- Raspberry Pi 3B, 3B+ or 4 (NOTE: I have only tested this image with 3B and 3B+.) running Raspbian Stretch or Buster
+- Raspberry Pi 3B, 3B+ or 4 (NOTE: I have only tested this image with 3B and 3B+.) running the Hampi image
 - Familiarity with the Pi's Terminal application and basic LINUX commands
 
 ## Installation 
+
+Pick either Easy or Manual Installation below.
+
+### Easy Installation
+
+1. Click __Raspberry > Hamradio > Update Pi and Ham Apps__.
+1. Check __hampi-utilities__, click __OK__.
+
+### Manual Installation
 
 1. Open a Terminal and run these commands:
 
