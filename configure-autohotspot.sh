@@ -11,7 +11,7 @@
 # Script and instructions are from  http://www.raspberryconnect.com/network/item/330-raspberry-pi-auto-wifi-hotspot-switch-internet
 #
 
-VERSION="1.14.1"
+VERSION="1.14.2"
 
 CONFIG_FILE="$HOME/autohotspot.conf"
 TITLE="Manage Auto-HotSpot version $VERSION"
@@ -330,10 +330,9 @@ EOF
 fi
 rm "$TFILE"
 
-if [[ ${F[_INTERVAL]} == "No" ]]
-then # Remove cronjob if present
-   crontab -u $USER -l | grep -v "$CRON_HS_COMMAND" | crontab -u $USER -
-else
+RE='^[0-9]+$'
+if [[ ${F[_INTERVAL]} =~ $RE ]]
+then 
    echo "Installing crontab"
    WHO="$USER"
    WHEN="*/${F[_INTERVAL_]} * * * *"
@@ -341,6 +340,8 @@ else
    JOB="$WHEN $WHAT"
    cat <(fgrep -i -v "$WHAT" <(sudo crontab -u $WHO -l)) <(echo "$JOB") | sudo crontab -u $WHO -
    echo "Done."
+else # Cron not requested.  Remove cronjob if present
+   crontab -u $USER -l | grep -v "$CRON_HS_COMMAND" | crontab -u $USER -
 fi
 
 yad --center --title="$TITLE" --text "<b><big><big>Auto-HotSpot is ready.  You should reboot now.</big></big></b>" \
