@@ -11,31 +11,32 @@
 # Script and instructions are from  http://www.raspberryconnect.com/network/item/330-raspberry-pi-auto-wifi-hotspot-switch-internet
 #
 
-VERSION="1.13"
+VERSION="1.14.1"
 
 CONFIG_FILE="$HOME/autohotspot.conf"
 TITLE="Manage Auto-HotSpot version $VERSION"
-SCRIPT_SITE="http://www.raspberryconnect.com"
-SCRIPT_PAGE="/network/item/330-raspberry-pi-auto-wifi-hotspot-switch-internet"
+SCRIPT_SITE="https://www.raspberryconnect.com"
+SCRIPT_PAGE="/projects/65-raspberrypi-hotspot-accesspoints/157-raspberry-pi-auto-wifi-hotspot-switch-internet"
 AUTO_HS_SCRIPT="/usr/local/bin/autohotspotN"
 CRON_HS_COMMAND="sudo $AUTO_HS_SCRIPT >/dev/null 2>&1"
+SERVICE_FILE="/etc/systemd/system/autohotspot.service"
 
 trap errorReport INT
 
 function errorReport () {
+	EXIT_CODE=${2:-1}
    echo
    if [[ $1 == "" ]]
    then
       exit 0
    else
-      if [[ $2 == "" ]]
-      then
-         echo >&2 "$1"
-         exit 1
-      else
-         echo >&2 "$1"
-         exit $2
-      fi
+		yad --center --title="$TITLE" --text "<b><big>ERROR: $1</big></b>" \
+  			--question --no-wrap \
+  			--borders=20 \
+  			--buttons-layout=center \
+  			--text-align=center \
+  			--align=right \
+  			--button=Close:$EXIT_CODE
    fi         
 }
 
@@ -74,6 +75,8 @@ then
       10) # Remove selected
          echo "Removing autohotspot service..."
          sudo systemctl disable autohotspot
+         sudo rm -f $AUTO_HS_SCRIPT
+         sudo rm -f $SERVICE_FILE
          echo "Done."
          echo "Disable IPv4 forwarding..."
          sudo sed -i 's|^net.ipv4.ip_forward=1|#net.ipv4.ip_forward=1|' /etc/sysctl.conf
@@ -313,11 +316,11 @@ After=multi-user.target
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/usr/local/bin/autohotspotN
+ExecStart=$AUTO_HS_SCRIPT
 [Install]
 WantedBy=multi-user.target
 EOF
-   sudo cp -f "$TFILE" /etc/systemd/system/autohotspot.service
+   sudo cp -f "$TFILE" $SERVICE_FILE
    echo "Creating autohotspot service"
    sudo systemctl enable autohotspot || errorReport "ERROR enabling autohotspot" 1
    echo "Done."
@@ -348,10 +351,4 @@ yad --center --title="$TITLE" --text "<b><big><big>Auto-HotSpot is ready.  You s
   --align=right \
   --button="Reboot Now":0 --button=Close:1
 [[ $? == 0 ]] && sudo shutdown -r +0 || exit 0
-
-
-
-
-
-
 
