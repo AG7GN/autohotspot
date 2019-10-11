@@ -10,7 +10,7 @@ The author of the autohotspot script has rearranged his website, which broke my 
 
 It also more completely removes files related to autohotspot, should you opt to remove it from your system.
 
-If you've already configured AutoHotSpot, I recommend that you update __autohotpsot__ using the __Raspberry > Hamapps > Update Pi and Ham Apps menu item__, then run __Raspberry > Preferences > Manage Auto-HotSpot__ and select "Remove Autohotspot".  Once it's removed, run __Raspberry > Preferences > Manage Auto-HotSpot__ again.  You should see your previous settings - change them if desired.  Click __OK__ to re-activate your AutoHotSpot. 
+If you've already configured AutoHotSpot and it's working for you, you can leave it as-is.  However I recommend that at your convenience you update __autohotpsot__ using the __Raspberry > Hamapps > Update Pi and Ham Apps menu item__, then run __Raspberry > Preferences > Manage Auto-HotSpot__ and select "Remove Autohotspot".  Once it's removed, run __Raspberry > Preferences > Manage Auto-HotSpot__ again.  You should see your previous settings - change them if desired.  Click __OK__ to re-activate your AutoHotSpot. 
 
 ## Prerequisites
 
