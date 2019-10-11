@@ -11,7 +11,7 @@
 # Script and instructions are from  http://www.raspberryconnect.com/network/item/330-raspberry-pi-auto-wifi-hotspot-switch-internet
 #
 
-VERSION="1.14.2"
+VERSION="1.14.3"
 
 CONFIG_FILE="$HOME/autohotspot.conf"
 TITLE="Manage Auto-HotSpot version $VERSION"
@@ -331,7 +331,7 @@ fi
 rm "$TFILE"
 
 RE='^[0-9]+$'
-if [[ ${F[_INTERVAL]} =~ $RE ]]
+if [[ ${F[_INTERVAL_]} =~ $RE ]]
 then 
    echo "Installing crontab"
    WHO="$USER"
