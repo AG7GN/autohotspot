@@ -1,8 +1,16 @@
 # Scripts to install, remove and manage an Auto-HotSpot on a Raspberry Pi
 
-Version 20190923
+Version 20191011
 
-Auto-HotSpot is a feature that allows the Raspberry Pi to become a "HotSpot" (WiFi access point).  This allows other computers, phones, and tablets to connect to and operate the Pi (using [VNC](https://www.raspberrypi.org/documentation/remote-access/vnc/)) over WiFi.  This Auto-HotSpot uses the [script written by roboberry](http://www.raspberryconnect.com/network/item/330-raspberry-pi-auto-wifi-hotspot-switch-internet) for use on Raspbian Stretch or Buster.
+Auto-HotSpot is a feature that allows the Raspberry Pi to become a "HotSpot" (WiFi access point).  This allows other computers, phones, and tablets to connect to and operate the Pi (using [VNC](https://www.raspberrypi.org/documentation/remote-access/vnc/)) over WiFi.  This Auto-HotSpot uses the [script written by roboberry](https://www.raspberryconnect.com/projects/65-raspberrypi-hotspot-accesspoints/157-raspberry-pi-auto-wifi-hotspot-switch-internet) for use on Raspbian Stretch or Buster.
+
+## Changes
+
+The author of the autohotspot script has rearranged his website, which broke my configure-autohotspot.sh script.  This version points to the new location of [roboberry's](https://www.raspberryconnect.com/projects/65-raspberrypi-hotspot-accesspoints/157-raspberry-pi-auto-wifi-hotspot-switch-internet) script.
+
+It also more completely removes files related to autohotspot, should you opt to remove it from your system.
+
+If you've already configured AutoHotSpot, I recommend that you update __autohotpsot__ using the __Raspberry > Hamapps > Update Pi and Ham Apps menu item__, then run __Raspberry > Preferences > Manage Auto-HotSpot__ and select "Remove Autohotspot" if prompted to do so.  Once it's removed, run __Raspberry > Preferences > Manage Auto-HotSpot__ again.  You should see your previous settings - change them if desired.  Click __OK__ to re-activate your AutoHotSpot. 
 
 ## Prerequisites
 
